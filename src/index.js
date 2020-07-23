@@ -5,31 +5,17 @@ let config = require('./config/backend.json');
 
 app.use(express.json());
 
-// validar métodos HTTP
-// criar rota de acordo com cada método
-
-
 config.routes.forEach(route => {
-    switch (route.method.toUpperCase()) {
-        case "GET":
-            app.get(route.url, (request, response) => {
-                const output = route.responses.find(x => x.id === route.selectedResponseId);
-                const body = require(output.output);
-                response.status(output.status).json(body);
-            })
-            break;
-        case "POST":
-            app.post(route.url, (request, response) => {
-                const body = require(route.output);
-                response.json(body);
-            });
-        default:
-            app.all(route.url, (request, response) => {
-                const body = require(route.output);
-                response.json(body);
-            })
-            break;
-    }
+    const method = route.method.toLowerCase()
+
+    app[method](route.url, (req, res) => {
+        const output = route.responses.find(x => x.id === route.selectedResponseId);
+        const body = require(output.output);
+        setTimeout(() => {
+            res.status(output.status).json(body);
+        }, output.delay)
+        console.log(`${method.toUpperCase()}: ${route.url}\nbody: ${JSON.stringify(body)}`)
+    });
 })
 
 app.get('/', function (req, res) {

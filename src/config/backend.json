@@ -1,22 +1,32 @@
 {
     "title": "Projeto Mock 2000",
     "description": "",
+    "delay": 1000,
+    "proxy": {
+        "enabled": false,
+        "baseUrl": "https://api.meuprojeto.com/"
+    },
     "routes": [
         {
             "url": "/todo",
             "method": "get",
+            "tags": ["todo"],
             "output": "./output/example.json",
-            "selectedResponseId": 2,
+            "selectedResponseId": 1,
             "responses": [
                 {
                     "id": 1,
+                    "notes": "Exemplo de sucesso",
                     "status": 200,
+                    "delay": 3000,
                     "output": "./output/example.json"
                 },
                 {
-                  "id": 2,
-                  "status": 400,
-                  "output": "./output/example400.json"
+                    "id": 2,
+                    "notes": "Exemplo de erro",
+                    "status": 400,
+                    "delay": 1000,
+                    "output": "./output/example400.json"
                 }
             ]
         }
