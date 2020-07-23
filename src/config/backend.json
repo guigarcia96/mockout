@@ -1,0 +1,24 @@
+{
+    "title": "Projeto Mock 2000",
+    "description": "",
+    "routes": [
+        {
+            "url": "/todo",
+            "method": "get",
+            "output": "./output/example.json",
+            "selectedResponseId": 2,
+            "responses": [
+                {
+                    "id": 1,
+                    "status": 200,
+                    "output": "./output/example.json"
+                },
+                {
+                  "id": 2,
+                  "status": 400,
+                  "output": "./output/example400.json"
+                }
+            ]
+        }
+    ]
+}
