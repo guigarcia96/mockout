@@ -1,10 +1,10 @@
 {
     "title": "Projeto Mock 2000",
     "description": "",
-    "delay": 3000,
+    "delay": 1000,
     "proxy": {
         "enabled": false,
-        "baseUrl": "https://api.meuprojeto.com/"
+        "baseUrl": "https://run.mocky.io/v3/"
     },
     "routes": [
         {
