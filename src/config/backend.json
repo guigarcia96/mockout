@@ -1,7 +1,7 @@
 {
     "title": "Projeto Mock 2000",
     "description": "",
-    "delay": 1000,
+    "delay": 3000,
     "proxy": {
         "enabled": false,
         "baseUrl": "https://api.meuprojeto.com/"
@@ -18,14 +18,14 @@
                     "id": 1,
                     "notes": "Exemplo de sucesso",
                     "status": 200,
-                    "delay": 3000,
+                    "delay": 0,
                     "output": "./output/example.json"
                 },
                 {
                     "id": 2,
                     "notes": "Exemplo de erro",
                     "status": 400,
-                    "delay": 1000,
+                    "delay": 0,
                     "output": "./output/example400.json"
                 }
             ]

@@ -2,8 +2,10 @@
 var express = require('express');
 const app = express();
 let config = require('./config/backend.json');
+const delayMiddleware = require("./middlewares/delayMiddleware")
 
 app.use(express.json());
+app.use(delayMiddleware);
 
 config.routes.forEach(route => {
     const method = route.method.toLowerCase()
